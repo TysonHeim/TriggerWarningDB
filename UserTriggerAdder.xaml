@@ -1,0 +1,19 @@
+﻿<Window x:Class="d.UserTriggerAdder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:d"
+        mc:Ignorable="d"
+        Title="UserTriggerAdder" Height="221.055" Width="366.8">
+    <Grid Margin="0,0,2.8,5.6">
+
+        <ComboBox x:Name="addmtrigcombo" Text="Select Trigger" HorizontalAlignment="Left" Margin="21,37,0,0" VerticalAlignment="Top" Width="286" >
+        </ComboBox>
+        <Slider x:Name="AddSeverity" HorizontalAlignment="Left" Margin="21,87,0,0" VerticalAlignment="Top" RenderTransformOrigin="25.5,0.489" Width="286"/>
+        <Button x:Name ="addUTrigger" Click="AddUTrigger_Click" Content="Submit" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="0                                                                              10" HorizontalAlignment="Left" Margin="21,105,0,0" VerticalAlignment="Top" Width="286"/>
+        <Label Content="What trigger do you want to Add?" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Add the severity: 10 being the worst" HorizontalAlignment="Left" Margin="21,59,0,0" VerticalAlignment="Top" Height="28" Width="292"/>
+    </Grid>
+</Window>

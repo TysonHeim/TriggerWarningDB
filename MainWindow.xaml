@@ -1,0 +1,74 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:d"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="d.MainWindow"
+        mc:Ignorable="d"
+        Title="Trigger Search" Height="750" Width="1500">
+    <Grid Background="#FFCD9696">
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="auto"/>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name ="SearchBox" HorizontalAlignment="Left" Grid.Row="0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="318" Margin="90,5,0,0"/>
+        <Label x:Name ="SearchLabel" Content="Trigger Search" HorizontalAlignment="Left" Margin="0,1,0,0" Grid.RowSpan="2" VerticalAlignment="Top"/>
+        <Button Content="Go" HorizontalAlignment="Left" Margin="413,5,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="20" Click="Go"/>
+        <Border BorderBrush="Black" Background="#FFF08B8B" BorderThickness="1" HorizontalAlignment="Left" Height="50" Margin="1208,14,0,0" Grid.Row="1" VerticalAlignment="Top" Width="273" Grid.RowSpan="2">
+            <Label Content="Your Info"  Margin="-0.8,-0.8,0,0" FontSize="30" FontStyle="Normal" FontStretch="UltraExpanded" HorizontalAlignment="Center"/>
+        </Border>
+        <Button x:Name="AddTrig" Height="20" Content="Add a Trigger" VerticalAlignment="Center" Click="AddTrig_Click" Margin="1208,95,12.6,125.8" Grid.Row="1" />
+        <Label x:Name="UserName" Content="User Name: " HorizontalAlignment="Left" Margin="1208,69,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <ListBox x:Name ="UserTriggersList" HorizontalAlignment="Left" Height="591" Margin="1208,120,0,0" Grid.Row="1" VerticalAlignment="Top" Width="276" Grid.RowSpan="3" Background="#FFEAC7C7">
+        </ListBox>
+        <Label x:Name="SearchResults" Content="Showing Results from ''..." HorizontalAlignment="Left" Margin="16,32,0,0" Grid.Row="1" VerticalAlignment="Top" Width="703"/>
+        <Label x:Name="MediaTitle" Content="" HorizontalAlignment="Left" Margin="16,58,0,0" Grid.Row="1" VerticalAlignment="Top" Height="65" Width="888" FontSize="40"/>
+        <Label x:Name="Safe" Content="Safe" Visibility="Hidden" HorizontalAlignment="Left" Margin="16,117,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFC9E8AB" />
+        <Label x:Name="Unsafe" Content="Unsafe" Visibility="Hidden" HorizontalAlignment="Left" Margin="16,117,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFE03F24" />
+        <Label x:Name="GenreType" Content="" HorizontalAlignment="Left" Margin="16,148,0,0" Grid.Row="1" VerticalAlignment="Top" Width="456"/>
+        <Label x:Name="Creator" Content="" HorizontalAlignment="Left" Margin="16,174,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="10" Width="369"/>
+        <Label Content="Want to add a trigger to this media?" HorizontalAlignment="Left" Margin="904,33.2,0,0" VerticalAlignment="Top" Grid.Row="3"/>
+        <Slider x:Name="AddSeverity" HorizontalAlignment="Left" Margin="904,106.2,0,0" Grid.Row="3" VerticalAlignment="Top" RenderTransformOrigin="25.5,0.489" Width="286"/>
+        <TextBox x:Name ="AddTime" HorizontalAlignment="Left" Height="23" Margin="904,131.2,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Time Stamp" VerticalAlignment="Top" Width="286"/>
+        <TextBox x:Name ="AddComment" HorizontalAlignment="Left" Height="39" Margin="904,159.2,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Comment" VerticalAlignment="Top" Width="286"/>
+        <Button x:Name ="addTrigger" Click="addTrigger_Click" Content="Submit" HorizontalAlignment="Left" Margin="904,203.2,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" FontFamily="Arial Black"/>
+        <Label Content="0                                                                              10" HorizontalAlignment="Left" Margin="904,84.2,0,0" Grid.Row="3" VerticalAlignment="Top" Width="286"/>
+        <ListView  HorizontalAlignment="Left" Height="490" Margin="904,18.467,0,0" Grid.Row="1" VerticalAlignment="Top" Width="286" Grid.RowSpan="3" Background="#FF89C4C5">
+            <ListView.Effect>
+                <DropShadowEffect/>
+            </ListView.Effect>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+            <Label Content="Need something to watch?" Height="31.466" Width="266" FontSize="16" FontWeight="Bold"/>
+            <Label Height="31.466" Width="266" Content="Select a media type:"/>
+            <ComboBox x:Name="MediaTypeCB" Height="31.466" Width="266"/>
+            <Label Height="31.466" Width="266" Content="Select a genre:"/>
+            <ComboBox x:Name="GenreCB" Height="31.466" Width="266"/>
+            <Button x:Name="suggestbutton" Content="FInd Me Something" Width="262" Click="suggestbutton_Click"/>
+
+            <ListBox x:Name="suggestionBox" Height="216" Width="260" Background="#FFFF9C9C"/>
+
+        </ListView>
+        <TextBox x:Name="UName"  HorizontalAlignment="Left" Height="23" Margin="489,5,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Pword"  HorizontalAlignment="Left" Height="23" Margin="614,5,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="login" Content="Log In / Reload User" HorizontalAlignment="Left" Margin="739,8,0,0" VerticalAlignment="Top" Width="160" Grid.RowSpan="2" Click="login_Click"/>
+        <ComboBox x:Name="addmtrigcombo" Text="Select Trigger" HorizontalAlignment="Left" Margin="904,62.2,0,0" Grid.Row="3" VerticalAlignment="Top" Width="286"  SelectionChanged="addmtrigcombo_SelectionChanged">
+            
+        </ComboBox>
+        <StackPanel x:Name="YourTrigg" Background="#FFE5E6E7" HorizontalAlignment="Left" Height="476" Margin="16,203,0,0" Grid.Row="1" VerticalAlignment="Top" Width="417" Grid.RowSpan="3"/>
+        <StackPanel x:Name="AllTrigg" Background="#FFE2D1D1"  HorizontalAlignment="Left" Height="476" Margin="455,203,0,0" Grid.Row="1" VerticalAlignment="Top" Width="427" Grid.RowSpan="3"/>
+        <Label Content="Your Triggers" HorizontalAlignment="Left" Margin="351,174,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101"/>
+        <Label Content="All Triggers" HorizontalAlignment="Left" Margin="455,174,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101"/>
+        <Button Content="Details" HorizontalAlignment="Left" Margin="807,177,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="detail_click"/>
+        <Button x:Name="AddUser" Content="Add User" HorizontalAlignment="Left" Margin="739,34,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="AddUser_Click"/>
+        <Button x:Name="AddMedia" Content="Add Media" HorizontalAlignment="Left" Margin="16,208.2,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="AddMedia_Click"/>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="d.AddMedia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:d"
+        mc:Ignorable="d"
+        Title="Add Media" Height="450" Width="800" Background="#FFF8B5B5">
+    <Grid>
+        <Label Content="Media Title" HorizontalAlignment="Left" Height="29" Margin="140,91,0,0" VerticalAlignment="Top" Width="433.667" FontSize="14"/>
+        <Label Content="Source" HorizontalAlignment="Left" Height="33" Margin="140,125,0,0" VerticalAlignment="Top" Width="359.667" FontSize="14"/>
+        <Label Content="Genre" HorizontalAlignment="Left" Height="36" Margin="140,163,0,0" VerticalAlignment="Top" Width="253.667" FontSize="14"/>
+        <Label Content="Creator" HorizontalAlignment="Left" Height="38" Margin="140,204,0,0" VerticalAlignment="Top" Width="253.667" FontSize="14"/>
+        <Label Content="Type" HorizontalAlignment="Left" Height="35" Margin="140,247,0,0" VerticalAlignment="Top" Width="318.667" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Height="43" Margin="140,287,0,0" TextWrapping="Wrap" Text="Release Date" VerticalAlignment="Top" Width="318.667" FontSize="14"/>
+        <TextBox x:Name ="MediaTitle" HorizontalAlignment="Left" Height="29" Margin="231.667,91,0,0" TextWrapping="Wrap" Text="Media" VerticalAlignment="Top" Width="395"/>
+        <TextBox x:Name = "Creator" HorizontalAlignment="Left" Height="38" Margin="231.667,204,0,0" TextWrapping="Wrap" Text="Creator" VerticalAlignment="Top" Width="395"/>
+        <TextBox x:Name = "ReleaseDate" HorizontalAlignment="Left" Height="28" Margin="231.667,287,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top" Width="395"/>
+        <Button x:Name ="submit" Click="submit_Click" Content="Submit" HorizontalAlignment="Left" Height="24" Margin="334.667,351.5,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.492,0.5"/>
+        <ComboBox x:Name ="mediaSource" HorizontalAlignment="Left" Height="33" Margin="231.667,125,0,0" VerticalAlignment="Top" Width="395"/>
+        <ComboBox x:Name ="mediaGenre" HorizontalAlignment="Left" Height="36" Margin="231.667,163,0,0" VerticalAlignment="Top" Width="395"/>
+        <ComboBox x:Name ="mediaType" HorizontalAlignment="Left" Height="35" Margin="231.667,247,0,0" VerticalAlignment="Top" Width="395"/>
+
+    </Grid>
+</Window>
